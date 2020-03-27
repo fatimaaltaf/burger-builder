@@ -6,11 +6,16 @@ import "./Burger.css";
 const Burger = props => {
   // Transform object of key value pairs into burger ingredients where value of
   const transformedIngredients = Object.keys(props.ingredients).map(igKey => {
-    console.log("THIS IS...", props.ingredients);
-    return [...Array(props.ingredients[igKey])].map((_, i) => {
-      return <BurgerIngredient key={igKey + i} type={igKey} />;
-    });
+    return [...Array(props.ingredients[igKey])]
+      .map((_, i) => {
+        return <BurgerIngredient key={igKey + i} type={igKey} />;
+      })
+      .reduce((arr, el) => {
+        return arr.concat(el);
+      }, []);
   });
+
+  console.log(transformedIngredients);
 
   return (
     <div className="Burger">
