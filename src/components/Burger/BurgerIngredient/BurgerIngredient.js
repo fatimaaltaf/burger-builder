@@ -7,7 +7,7 @@ class BurgerIngredient extends Component {
   render() {
     let ingredient = null;
 
-    // Dynamic ingredient
+    // Dynamic ingredients
     switch (this.props.type) {
       case "bread-bottom":
         ingredient = <div className="BreadBottom"></div>;

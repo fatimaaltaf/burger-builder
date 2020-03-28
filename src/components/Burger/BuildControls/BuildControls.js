@@ -2,6 +2,7 @@ import React from "react";
 import "./BuildControls.css";
 import BuildControl from "./BuildControl/BuildControl";
 
+// Array of ingredient objects to map over
 const controls = [
   { label: "Salad", type: "salad" },
   { label: "Bacon", type: "bacon" },
